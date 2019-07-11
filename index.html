@@ -3,11 +3,11 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Antonio Pierro - Processign Project</title>
+        <title>Francesca Ledda - Processign Project</title>
         <script src="vendors/processing.min.js"></script>
     </head>
     <body>
-        <h1>Processing project by Antonio</h1>
+        <h1>Processing project by Francesca</h1>
         <script type="text/processing">
 
             // Write your project here
@@ -24,7 +24,27 @@
                 rect(0, 0, 80, 5);
                 popMatrix();
             }
-            
+            void setup() {
+  size(200, 200);
+  background(0);
+  smooth();
+  noStroke();
+}
+
+void draw(){
+  if (frameCount % 9 == 0) {
+    fill(frameCount * 10 % 900, frameCount * 20 % 300,
+      frameCount * 8 % 900);
+    pushMatrix();
+    translate(100, 100);
+    rotate(radians(frameCount * 7  % 360));
+    ellipse(0, 0, 100, 40);
+    rect(70, 40, 40, 40); 
+    popMatrix();
+
+ }
+
+}
         </script>
         <canvas></canvas>
     </body>
